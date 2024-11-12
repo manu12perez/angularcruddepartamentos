@@ -8,10 +8,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ModelsComponent } from './components/models/models.component';
-
-import { ServiceDepartamentos } from '../services/service.departamentos';
 import { CreateComponent } from './components/create/create.component';
+import { DetailsComponent } from './components/details/details.component';
+
+import { ModelsComponent } from './components/models/models.component';
+import { ServiceDepartamentos } from '../services/service.departamentos';
+import { EditComponent } from './components/edit/edit.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { CreateComponent } from './components/create/create.component';
     HomeComponent,
     MenuComponent,
     ModelsComponent,
-    CreateComponent
+    CreateComponent,
+    DetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

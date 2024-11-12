@@ -1,12 +1,14 @@
 <div>
-    <form #createForm="ngForm">
+    <h1 style="text-align: center;">Nuevo departamento</h1>
+    <p style="text-align: center;"><a [routerLink]="['/']">Back to Home</a></p>
+    <form #createForm="ngForm" style="width: 500px; margin: 0 auto">
         <label>Id Departamento</label>
         <input class="form-control" type="number" name="cajaid" #cajaid />
         <label>Nombre</label>
         <input class="form-control" type="text" name="cajanombre" #cajanombre />
         <label>Localidad</label>
         <input class="form-control" type="text" name="cajalocalidad" #cajalocalidad />
-        <button class="btn btn-success">
+        <button class="btn btn-success" (click)="insertDepartamento()">
             Crear Departamento
         </button>
     </form>

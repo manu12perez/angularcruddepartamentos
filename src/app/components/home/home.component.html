@@ -1,20 +1,40 @@
 <div>
-    <h1>HOME</h1>
+    <h1 style="text-align: center;">HOME</h1>
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Localidad</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @for (dept of departamentos; track dept) {
-                <tr>
-                    <td>{{dept.idDepartamento}}</td>
-                    <td>{{dept.nombre}}</td>
-                    <td>{{dept.localidad}}</td>
-                </tr>
+            <tr>
+                <td>{{dept.idDepartamento}}</td>
+                <td>{{dept.nombre}}</td>
+                <td>{{dept.localidad}}</td>
+                <td>
+                    <a [routerLink]="['/details/' + dept.idDepartamento + '/' + dept.nombre + '/' + dept.localidad]"
+                        class="btn btn-info">
+                        Details
+                    </a>
+                    <!-- <a [routerLink]="['/details/', dept.idDepartamento, dept.nombre, dept.localidad ]"
+                        class="btn btn-outline-dark">
+                        Details
+                    </a> -->
+                    <a [routerLink]="['/edit/' + dept.idDepartamento]" class="btn btn-warning">
+                        Edit
+                    </a>
+                    <!-- <a [routerLink]="['/delete/' + dept.idDepartamento]" class="btn btn-danger">
+                        Edit
+                    </a> -->
+                    <button class="btn btn-danger" (click)="deleteDepartamento(dept.idDepartamento)">
+                        Borrar
+                    </button>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
